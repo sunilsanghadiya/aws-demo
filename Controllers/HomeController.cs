@@ -12,7 +12,7 @@ namespace aws_demo.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok("Welcome to aws demo");
+            return Ok("Welcome to aws demo web api using .NET");
         }
     }
 }

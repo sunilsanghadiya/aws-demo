@@ -1,26 +1,20 @@
 ﻿version: '3.1'
+name: aws-demo
+
 services:
   api:
     container_name: aws-demo
     image: aws-demo:latest
     environment: 
-        - ASPNETCORE_ENVIRONMENT=Docker
+        - ASPNETCORE_ENVIRONMENT=Development
         - ASPNETCORE_URLS=http://+:8080
     ports:
-        - "8080:8080" 
+        - 8080:8080 
   sqlserver:
     image: mcr.microsoft.com/mssql/server
     ports:
-        - "1433:1433"
+        - 1433:1433
     environment:
         SQL_USERNAME: admin
         SQL_DATABASE: aws-demo
         SQL_PASSWORD: login12*
-  redis: 
-    image: redis
-    ports:
-        - "6379:6379"
-  rabbitmq:
-    image: rabbitmq
-    ports:
-        - "8282:8282"
